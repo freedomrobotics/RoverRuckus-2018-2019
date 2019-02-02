@@ -6,11 +6,13 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 @TeleOp(name="TeleOpMode", group="FHSROBOTICS")
 public class TeleOpMode extends OpMode {
 
-    Hardware hardware = new Hardware(this);
+    Hardware hardware;
 
     // Code to run ONCE when the driver hits INIT //
     @Override
     public void init() {
+
+        hardware = new Hardware(this);
 
         hardware.leftMotor = hardwareMap.dcMotor.get("leftMotor");
         hardware.rightMotor = hardwareMap.dcMotor.get("rightMotor");

@@ -6,10 +6,16 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 @Autonomous(name="AutonomousMode", group="FHSROBOTICS")
 public class AutonomousMode extends OpMode{
 
+    Hardware hardware;
+    MineralDetector mineralDetector;
+
     @Override
     public void init() {
 
-        Hardware hardware = new Hardware(this);
+        hardware = new Hardware(this);
+
+        mineralDetector = new MineralDetector();
+        mineralDetector.init(hardware.hardwareMap);
 
     }
 
@@ -25,7 +31,7 @@ public class AutonomousMode extends OpMode{
     @Override
     public void start() {
 
-
+        
 
     }
 
